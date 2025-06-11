@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AppLab — ваш партнёр в разработке мобильных приложений и веб-сервисов.">
-    <title>AppLab — Разработка приложений</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AppLab — Розробка мобільних додатків</title>
     <style>
+        /* Базові стилі */
         * {
             margin: 0;
             padding: 0;
@@ -14,50 +14,126 @@
         }
         body {
             background-color: #fff;
-            color: #333;
+            color: #111;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a {
+            color: #111;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #555;
+            text-decoration: underline;
         }
         header {
-            background-color: #000;
+            background: #000;
             color: #fff;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 10px;
+            letter-spacing: 3px;
+            opacity: 0;
+            animation: fadeInDown 1s forwards;
         }
         header p {
             font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0;
+            animation: fadeInUp 1s forwards 0.5s;
+        }
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
         section {
-            padding: 40px 20px;
-            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
         }
-        section h2 {
-            font-size: 2rem;
+        section:nth-child(2) { animation-name: fadeInUp; animation-delay: 0.3s; }
+        section:nth-child(3) { animation-name: fadeInUp; animation-delay: 0.6s; }
+        section:nth-child(4) { animation-name: fadeInUp; animation-delay: 0.9s; }
+
+        h2 {
+            font-size: 2.2rem;
             margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 8px;
+            letter-spacing: 1.5px;
         }
-        section p {
-            font-size: 1rem;
-            margin-bottom: 20px;
+        p, li {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        ul {
+            list-style: inside disc;
+            margin-left: 10px;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
         }
         footer {
-            background-color: #000;
+            background: #000;
             color: #fff;
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
+            padding: 20px 10px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            position: relative;
             bottom: 0;
+            width: 100%;
         }
-        a {
-            color: #000;
-            text-decoration: none;
-            font-weight: bold;
+
+        /* Анімації */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        a:hover {
-            text-decoration: underline;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Адаптив */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+            p, li {
+                font-size: 1rem;
+            }
+            main {
+                margin: 20px auto;
+            }
         }
     </style>
 </head>
@@ -65,34 +141,53 @@
 
 <header>
     <h1>AppLab</h1>
-    <p>Разработка мобильных приложений и веб-сервисов</p>
+    <p>Інноваційна розробка мобільних додатків та веб-сервісів</p>
 </header>
 
-<section>
-    <h2>О нас</h2>
-    <p>Мы — команда профессионалов, специализирующихся на создании инновационных решений для вашего бизнеса. Наши приложения помогают улучшить взаимодействие с клиентами и оптимизировать внутренние процессы.</p>
-</section>
+<main>
+    <section>
+        <h2>Про нас</h2>
+        <p>AppLab — це команда професіоналів, яка створює сучасні мобільні та веб-додатки, що допомагають бізнесам розвиватися і ефективно взаємодіяти зі своїми клієнтами.</p>
+        <p>Ми поєднуємо креативний підхід з технологіями, щоб створити продукт, який відповідає вашим потребам і перевершує очікування.</p>
+    </section>
 
-<section>
-    <h2>Наши услуги</h2>
-    <p>Мы предлагаем полный цикл разработки: от идеи до запуска. Наши услуги включают:</p>
-    <ul>
-        <li>Мобильные приложения для iOS и Android</li>
-        <li>Веб-сервисы и платформы</li>
-        <li>UI/UX дизайн</li>
-        <li>Техническая поддержка и обновления</li>
-    </ul>
-</section>
+    <section>
+        <h2>Наші послуги</h2>
+        <ul>
+            <li><strong>Розробка мобільних додатків:</strong> iOS, Android, кросплатформенні рішення.</li>
+            <li><strong>Веб-сервіси та платформи:</strong> створення адаптивних, швидких і надійних сайтів та сервісів.</li>
+            <li><strong>UI/UX дизайн:</strong> створення інтуїтивних і привабливих інтерфейсів, що покращують досвід користувача.</li>
+            <li><strong>Технічна підтримка та оновлення:</strong> супровід і розвиток вашого продукту після запуску.</li>
+            <li><strong>Консультації та аналіз:</strong> допомога у виборі технологій і стратегії розвитку проекту.</li>
+        </ul>
+    </section>
 
-<section>
-    <h2>Контакты</h2>
-    <p>Свяжитесь с нами для обсуждения вашего проекта:</p>
-    <p>Email: <a href="mailto:info@applabua.com">info@applabua.com</a></p>
-    <p>Телефон: +38 (048) 123-45-67</p>
-</section>
+    <section>
+        <h2>Наші переваги</h2>
+        <ul>
+            <li>Індивідуальний підхід до кожного клієнта</li>
+            <li>Висока якість розробки та тестування</li>
+            <li>Прозорість процесів і своєчасні звіти</li>
+            <li>Застосування сучасних технологій і методологій</li>
+            <li>Підтримка та розвиток проектів після запуску</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Контакти</h2>
+        <p>Готові обговорити ваш проект? Зв’яжіться з нами:</p>
+        <p>Email: <a href="mailto:info@applabua.com">info@applabua.com</a></p>
+        <p>Телефон: <a href="tel:+380481234567">+38 (048) 123-45-67</a></p>
+        <p>Соціальні мережі: 
+            <a href="#" aria-label="Facebook">Facebook</a> | 
+            <a href="#" aria-label="LinkedIn">LinkedIn</a> | 
+            <a href="#" aria-label="Instagram">Instagram</a>
+        </p>
+    </section>
+</main>
 
 <footer>
-    <p>&copy; 2025 AppLab. Все права защищены.</p>
+    <p>&copy; 2025 AppLab. Всі права захищені.</p>
 </footer>
 
 </body>
